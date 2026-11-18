@@ -26,11 +26,12 @@
     --c-data: #2E7D5B;
     --c-media: #B0446A;
     --c-perf: #6B4FA0;
-    --c-epfl: #D62B2B;
+    --c-epfl: #FF0000;
+    --c-idiap: #125CF7;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #111113; --text: #EDEDEF; --muted: #8B8B93; --rule: #26262B; --accent: #8EB4E3; --hover: #1A1B1F;
-      --c-ai: #7FA8E6; --c-heri: #E0A35C; --c-data: #6CC49B; --c-media: #EA85A8; --c-perf: #AE97E3; --c-epfl: #F07070; }
+      --c-ai: #7FA8E6; --c-heri: #E0A35C; --c-data: #6CC49B; --c-media: #EA85A8; --c-perf: #AE97E3; --c-epfl: #FF5A5A; --c-idiap: #6B9BFF; }
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -84,6 +85,12 @@
   .rows.two .row { grid-template-columns: 110px 1fr; }
   .rows.three .row { grid-template-columns: 110px 1fr 140px; }
   .rows.news .row { grid-template-columns: 110px 1fr; }
+  .rows.pubs a.row .t::after { content: " ↗"; color: var(--muted); font-weight: 400; }
+  .rows.pubs a.row:hover .t { color: var(--accent); }
+  .rows.exp .row { grid-template-columns: 110px 1fr 110px; }
+  .rows.exp .note { font-size: 14px; color: var(--muted); margin-top: 4px; max-width: 60ch; }
+  .rows.exp .sub { color: var(--text); opacity: .8; }
+  .tabs .chip .n { font-family: var(--mono); font-size: 11px; opacity: .6; margin-left: 6px; }
   .award { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-family: var(--mono); font-size: 11px; color: var(--c-heri); border: 1px solid color-mix(in srgb, var(--c-heri) 40%, transparent); border-radius: 999px; padding: 2px 10px; }
   .award::before { content: "★"; }
   .more { display: inline-block; margin-top: 16px; font-size: 14px; }
@@ -124,7 +131,8 @@
     .intro img { width: 112px; order: -1; }
     section { grid-template-columns: 1fr; gap: 16px; padding-bottom: 56px; }
     section > h2 { position: static; }
-    .rows.two .row, .rows.three .row, .rows.news .row { grid-template-columns: 1fr; gap: 2px; }
+    .rows.two .row, .rows.three .row, .rows.news .row, .rows.exp .row { grid-template-columns: 1fr; gap: 2px; }
+    .rows.exp .row .r { color: var(--muted); }
     .rows.three .row .r { color: var(--muted); }
     .rows.projects .row { grid-template-columns: 56px 1fr 16px; gap: 12px; }
     .thumb { width: 56px; height: 40px; }
@@ -152,9 +160,9 @@
   <div class="intro">
     <div>
       <div class="kicker">
-        <span style="--c:var(--c-ai)">PhD Researcher</span>
-        <span style="--c:var(--c-data)">Social Computing Group</span>
-        <span style="--c:var(--c-perf)">Idiap Research Institute</span>
+        <span style="--c:var(--text)">PhD Researcher</span>
+        <span style="--c:var(--c-idiap)">Social Computing Group</span>
+        <span style="--c:var(--c-idiap)">Idiap Research Institute</span>
         <span style="--c:var(--c-epfl)">EPFL</span>
       </div>
       <h1>Nil Yagmur Ilba</h1>
@@ -203,21 +211,18 @@
   <section id="publications">
     <h2>Publications</h2>
     <div>
-      <div class="rows three">
+      <div class="rows two pubs">
         <a class="row" href="https://infoscience.epfl.ch/handle/20.500.14299/267531" target="_blank" rel="noopener">
           <span class="mono">2026</span>
           <div><div class="t">Living in a Material(istic) World: Understanding the Mutual Effect between Popular Music and Materialistic Practices</div><div class="sub">Digital Humanities 2026 (ADHO), Daejeon, South Korea · with A. Balasubramaniam &amp; D. Belfiore</div><div class="award">Conference Bursary Award</div></div>
-          <span class="mono r">First author ↗</span>
         </a>
         <div class="row">
           <span class="mono">2024</span>
           <div><div class="t">Tracing Ecological Metaphors in Discourses on Open Science using LLMs and Knowledge Graphs</div><div class="sub">Anthology of Computers and the Humanities</div></div>
-          <span class="mono r">Author</span>
         </div>
         <div class="row">
           <span class="mono">2024</span>
           <div><div class="t">Painter Profile Clustering Using NLP Features</div><div class="sub">Complexity, Future Information Systems and Risk, Angers</div></div>
-          <span class="mono r">Co-author</span>
         </div>
       </div>
       <a class="link more" href="https://scholar.google.com/citations?user=Y8kSxqMAAAAJ&amp;hl=en">All publications on Google Scholar →</a>
@@ -236,14 +241,10 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <h2>Experience</h2>
-    <div class="rows three">
-      <div class="row"><span class="mono">2026–</span><div><div class="t">Doctoral Student</div><div class="sub">Social Computing Group, Idiap Research Institute &amp; EPFL</div></div><span class="mono r">Martigny</span></div>
-      <div class="row"><span class="mono">2024–25</span><div><div class="t">Student Research Assistant</div><div class="sub">Laboratory for the History of Science and Technology, EPFL</div></div><span class="mono r">Lausanne</span></div>
-      <div class="row"><span class="mono">2024</span><div><div class="t">Student Assistant</div><div class="sub">Laboratory for Experimental Museology, EPFL</div></div><span class="mono r">Lausanne</span></div>
-      <div class="row"><span class="mono">2022–23</span><div><div class="t">Research Assistant</div><div class="sub">Data Science &amp; Optimization Group, Istanbul Bilgi University</div></div><span class="mono r">Istanbul</span></div>
-      <div class="row"><span class="mono">2022–23</span><div><div class="t">Project Coordinator, 2209-A</div><div class="sub">TÜBİTAK</div></div><span class="mono r">Istanbul</span></div>
-      <div class="row"><span class="mono">2021</span><div><div class="t">Undergraduate Research Assistant</div><div class="sub">Cultural Policy and Management Research Centre, Istanbul Bilgi University</div></div><span class="mono r">Istanbul</span></div>
+    <h2>Experience<span class="mono">&amp; education</span></h2>
+    <div>
+      <div class="legend tabs" id="exp-tabs" role="tablist"></div>
+      <div class="rows exp" id="exp-list"></div>
     </div>
   </section>
 
@@ -278,7 +279,7 @@
     ["Triadic Triptych, Zurich Design Museum", "Motion data, generative AI", "perf", "https://museum-gestaltung.ch/en/digital-guide-museum-future", "https://www.epfl.ch/labs/emplus/wp-content/uploads/2025/08/triadic-triptych.jpg"],
     ["How Are European Citizens’ Views Changing?", "D3.js, survey data", "data", "https://com-480-data-visualization.github.io/ChartToppers/", "https://davideromano.me/dataviz-2.png"],
     ["Universal Exhibition Chatbot", "Vision-language models", "heri", "https://drive.google.com/file/d/1W_quODp-feAIuZvnsAHZgvR2bGF9d9EH/view?usp=sharing", P + "premium_photo-1739400184347-3df0d11f591d?auto=format&fit=crop&q=70&w=800"],
-    ["Stereo Image Restoration for VR", "Image processing", "heri", "", ""],
+    ["Stereo Image Restoration for VR", "Image processing", "heri", "", "https://www.ansichtskartenversand.com/shop/ak/151/15106398/Stereo-Fotografie-Photographie-H-J-Paris-Ansicht-Paris-Place-de-la-Bastille.jpg"],
     ["RAG-based Educational Assistant", "Retrieval-augmented generation", "ai", "https://doi.org/10.13140/RG.2.2.24579.77609", "https://nkk.com.vn/wp-content/uploads/2025/08/nkktech-global-image-post-top-cong-cu-xay-dung-chatbot-ai-khong-can-lap-trinh.jpg.webp"],
     ["Spatialising Barclay Johnson’s Travelogue", "NER, GIS", "heri", "", U + "photo-1524661135-423995f22d0b?auto=format&fit=crop&q=70&w=800"],
     ["Exploring Multicultural Bridges on TikTok", "Topic modeling, hashtag networks", "media", "https://doi.org/10.13140/RG.2.2.17868.88965", U + "photo-1596344848145-c435aa808182?auto=format&fit=crop&q=70&w=800"],
@@ -330,6 +331,55 @@
     legend.addEventListener("click", hide);
     addEventListener("scroll", hide, { passive: true });
   }
+</script>
+<script>
+  // Edit experience here: [years, role, organisation, place, short note]
+  const EXP = {
+    Research: [
+      ["2026 –", "Doctoral Student", "Social Computing Group, Idiap Research Institute & EPFL", "Martigny", "News media framing analysis with LLMs and participatory AI."],
+      ["2024 – 25", "Student Research Assistant", "Laboratory for the History of Science and Technology, EPFL", "Lausanne", "NLP and quantitative methods to trace ecological metaphors in open-science discourse."],
+      ["2024", "Student Assistant", "Laboratory for Experimental Museology (eM+), EPFL", "Lausanne", "Image editing and archival research for digital collections."],
+      ["2022 – 23", "Research Assistant", "Data Science & Optimization Group, Istanbul Bilgi University", "Istanbul", "BERT-based clustering and semantic similarity for artwork valuation."],
+      ["2022 – 23", "Project Coordinator, 2209-A", "TÜBİTAK", "Istanbul", "Led a project on auction price prediction of artworks with machine learning."],
+      ["2021", "Undergraduate Research Assistant", "Cultural Policy and Management Research Centre, Istanbul Bilgi University", "Istanbul", "Survey analysis and visualization for a report on the performing arts during the pandemic."],
+    ],
+    Professional: [
+      ["2025 –", "LLM Engineer Intern", "Medtronic", "Vaud", "End-to-end pipeline and fine-tuned LLMs turning free-text feedback into market insights."],
+      ["2025", "Assistant Engineer", "OpenEdition", "Marseille", "Knowledge-graph–driven RAG pipelines to analyze terminology across open-access publications."],
+      ["2023", "Junior Creative Research Executive", "FutureBright Research", "Istanbul", "Quantitative market research design, survey analysis and client reporting."],
+      ["2022", "Sales Operations Intern", "Istanbul Foundation for Culture and Arts (İKSV)", "Istanbul", "Sales, budgeting and market research for İKSV’s music, film and jazz festivals."],
+      ["2019 – 20", "Student Employee", "Admissions Office, Istanbul Bilgi University", "Istanbul", "Student outreach, presentations and CRM support."],
+    ],
+    Education: [
+      ["2026 –", "PhD", "EPFL & Idiap Research Institute", "Martigny", "Social Computing Group, supervised by Prof. Daniel Gatica-Perez."],
+      ["2023 – 26", "MSc in Digital Humanities", "EPFL", "Lausanne", "TEV Scholar (full scholarship)."],
+      ["2019 – 23", "BA in Arts and Cultural Management (Double Major)", "Istanbul Bilgi University", "Istanbul", "GPA 3.78/4.00 · High Honours · Full scholarship."],
+      ["2018 – 22", "BSc in Industrial Engineering", "Istanbul Bilgi University", "Istanbul", "GPA 3.62/4.00 · High Honours · Best Senior Design Project · Full scholarship."],
+      ["2013 – 18", "High School Diploma", "Tarsus American College", "Tarsus", "Full scholarship · Student Council · Math teaching volunteer."],
+    ],
+    Volunteering: [
+      ["2024 –", "President", "Dance Square Association, EPFL", "Lausanne", "Leading EPFL’s official dance association."],
+      ["2024", "Volunteer", "Prix de Lausanne", "Lausanne", "Guided visitors through eM+’s installation “Dancing through Time”."],
+      ["2022 – 23", "Education Volunteer", "Toplum Gönüllüleri Vakfı (TOG)", "Istanbul", "Weekly math lessons for disadvantaged students."],
+      ["2018 –", "Volunteer", "Tarsus American College Alumni Association", "Istanbul", "Events, sponsorships and the alumni journal Bizletter."],
+      ["2019 – 22", "Vice President, then Supervisory Board", "Bilgi IEOR", "Istanbul", "Conferences, seminars and internal coordination."],
+      ["2020 – 21", "Gamification Volunteer", "GamFed Türkiye", "Remote", "Gamification research and outreach in education."],
+      ["2019 – 20", "Student Volunteer", "Bilgi Bilum", "Istanbul", "Nar Harekatı youth development project."],
+      ["2015 – 16", "Volunteer Reader", "Boğaziçi University – GETEM", "Istanbul", "Audio recordings for visually impaired students."],
+    ],
+  };
+  const TAB_COLORS = { Research: "var(--c-idiap)", Professional: "var(--c-data)", Education: "var(--c-epfl)", Volunteering: "var(--c-media)" };
+  const tabs = document.getElementById("exp-tabs"), expList = document.getElementById("exp-list");
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  let tab = "Research";
+  function renderExp() {
+    tabs.innerHTML = Object.keys(EXP).map(k =>
+      `<button class="chip${k === tab ? " on" : ""}" role="tab" aria-selected="${k === tab}" style="--c:${TAB_COLORS[k]}" data-k="${k}">${k}<span class="n">${EXP[k].length}</span></button>`).join("");
+    expList.innerHTML = EXP[tab].map(([y, r, o, p, n]) =>
+      `<div class="row"><span class="mono">${y}</span><div><div class="t">${esc(r)}</div><div class="sub">${esc(o)}</div><div class="note">${esc(n)}</div></div><span class="mono r">${p}</span></div>`).join("");
+  }
+  tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; tab = b.dataset.k; renderExp(); });
+  renderExp();
 </script>
 </body>
 </html>
