@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nil Yagmur Ilba · PhD Researcher</title>
+<meta name="description" content="Nil Yagmur Ilba is a PhD researcher in the Social Computing Group at Idiap Research Institute and EPFL, studying news media framing with large language models and participatory AI.">
+<meta property="og:title" content="Nil Yagmur Ilba · PhD Researcher">
+<meta property="og:description" content="News media framing, large language models and participatory AI. Social Computing Group, Idiap & EPFL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --text: #18181B;
+    --muted: #71717A;
+    --rule: #E4E4E7;
+    --accent: #1E3A5F;
+    --hover: #F1F3F6;
+    --sans: "Geist", system-ui, sans-serif;
+    --mono: "Geist Mono", ui-monospace, monospace;
+    --label: 180px;
+    --c-ai: #2F5D9E;
+    --c-heri: #A8641C;
+    --c-data: #2E7D5B;
+    --c-media: #B0446A;
+    --c-perf: #6B4FA0;
+    --c-epfl: #D62B2B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111113; --text: #EDEDEF; --muted: #8B8B93; --rule: #26262B; --accent: #8EB4E3; --hover: #1A1B1F;
+      --c-ai: #7FA8E6; --c-heri: #E0A35C; --c-data: #6CC49B; --c-media: #EA85A8; --c-perf: #AE97E3; --c-epfl: #F07070; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; width: 100%; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+  .mono { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .link { color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .link:hover { border-color: currentColor; }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand b { font-weight: 600; letter-spacing: -.01em; }
+  nav { display: flex; gap: 22px; }
+  nav a { color: var(--muted); font-size: 14px; transition: color .2s; }
+  nav a:hover { color: var(--text); }
+
+  /* Intro */
+  .intro { display: grid; grid-template-columns: 1fr 220px; gap: 56px; padding: 88px 0 80px; align-items: end; }
+  .intro h1 { font-size: clamp(44px, 7vw, 84px); font-weight: 500; letter-spacing: -.045em; line-height: 1; margin: 18px 0 24px; }
+  .intro .tagline { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.4; letter-spacing: -.02em; max-width: 34ch; }
+  .intro .tagline span { color: var(--muted); }
+  .intro .meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 28px; }
+  .dot::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #3FA36B; margin-right: 8px; vertical-align: 1px; }
+  .intro img { aspect-ratio: 1; object-fit: cover; border-radius: 4px; filter: grayscale(.15); }
+  .profiles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .profiles a { font-size: 13px; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; transition: all .2s; }
+  .profiles a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Sections */
+  section { border-top: 1px solid var(--rule); padding: 32px 0 72px; display: grid; grid-template-columns: var(--label) 1fr; gap: 24px; }
+  section > h2 { font-size: 13px; font-weight: 500; position: sticky; top: 84px; align-self: start; }
+  section > h2 .mono { display: block; font-weight: 400; margin-top: 2px; }
+  .statement { font-size: 18px; line-height: 1.6; max-width: 62ch; letter-spacing: -.01em; }
+  .statement + .statement { margin-top: 16px; }
+  .statement strong { font-weight: 500; }
+  .muted { color: var(--muted); }
+
+  /* Rows */
+  .rows { border-top: 1px solid var(--text); }
+  .row { display: grid; gap: 16px; padding: 14px 8px; border-bottom: 1px solid var(--rule); align-items: baseline; transition: background .15s; }
+  a.row:hover { background: var(--hover); }
+  a.row:hover .arrow { color: var(--accent); transform: translateX(3px); }
+  .row .t { font-weight: 500; }
+  .row .sub { color: var(--muted); font-size: 14px; }
+  .arrow { color: var(--muted); transition: all .2s; text-align: right; }
+  .rows.two .row { grid-template-columns: 110px 1fr; }
+  .rows.three .row { grid-template-columns: 110px 1fr 140px; }
+  .rows.news .row { grid-template-columns: 110px 1fr; }
+  .award { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-family: var(--mono); font-size: 11px; color: var(--c-heri); border: 1px solid color-mix(in srgb, var(--c-heri) 40%, transparent); border-radius: 999px; padding: 2px 10px; }
+  .award::before { content: "★"; }
+  .more { display: inline-block; margin-top: 16px; font-size: 14px; }
+
+  /* Projects */
+  .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .chip { font-family: var(--sans); font-size: 13px; color: var(--text); background: none; border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px 5px 10px; cursor: pointer; transition: all .2s; }
+  .chip::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--c); margin-right: 8px; }
+  .chip:hover { border-color: var(--c); }
+  .chip.on { background: var(--c); border-color: var(--c); color: #fff; }
+  .chip.on::before { background: #fff; }
+  .rows.projects .row { grid-template-columns: 64px 1fr 170px 24px; align-items: center; padding: 10px 8px; position: relative; }
+  .rows.projects .row::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2px; background: var(--c); opacity: 0; transition: opacity .2s; }
+  .rows.projects .row:hover::before { opacity: 1; }
+  .rows.projects .row:hover .t { color: var(--c); }
+  .thumb { width: 64px; height: 44px; border-radius: 4px; overflow: hidden; background: color-mix(in srgb, var(--c) 14%, var(--bg)); display: block; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.9); }
+  .thumb .ph { display: block; width: 100%; height: 100%; background: repeating-linear-gradient(135deg, transparent 0 6px, color-mix(in srgb, var(--c) 25%, transparent) 6px 7px); }
+  .rows.projects .t { display: block; font-weight: 500; transition: color .2s; }
+  .rows.projects .m { display: block; color: var(--muted); font-size: 13px; }
+  .cat { font-family: var(--mono); font-size: 11px; color: var(--c); display: flex; align-items: center; gap: 6px; }
+  .cat::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c); flex: none; }
+  .peek { position: fixed; left: 0; top: 0; width: 260px; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; box-shadow: 0 12px 40px rgba(0,0,0,.18); pointer-events: none; opacity: 0; transition: opacity .2s; z-index: 20; }
+  .peek.show { opacity: 1; }
+
+  /* Color-coded headline line */
+  .kicker { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .kicker span { font-family: var(--mono); font-size: 12px; display: inline-flex; align-items: center; gap: 7px; color: var(--text); }
+  .kicker span::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--c); }
+  .brand i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 2px; }
+
+  footer .wrap { display: flex; justify-content: space-between; padding: 24px clamp(16px, 4vw, 40px) 48px; border-top: 1px solid var(--rule); }
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .brand .mono { display: none; }
+    .intro { grid-template-columns: 1fr; padding: 48px 0 56px; gap: 28px; }
+    .intro img { width: 112px; order: -1; }
+    section { grid-template-columns: 1fr; gap: 16px; padding-bottom: 56px; }
+    section > h2 { position: static; }
+    .rows.two .row, .rows.three .row, .rows.news .row { grid-template-columns: 1fr; gap: 2px; }
+    .rows.three .row .r { color: var(--muted); }
+    .rows.projects .row { grid-template-columns: 56px 1fr 16px; gap: 12px; }
+    .thumb { width: 56px; height: 40px; }
+    .hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="brand"><b>Nil Yagmur Ilba</b><span class="mono">PhD Researcher · Idiap &amp; EPFL</span></a>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="intro">
+    <div>
+      <div class="kicker">
+        <span style="--c:var(--c-ai)">PhD Researcher</span>
+        <span style="--c:var(--c-data)">Social Computing Group</span>
+        <span style="--c:var(--c-perf)">Idiap Research Institute</span>
+        <span style="--c:var(--c-epfl)">EPFL</span>
+      </div>
+      <h1>Nil Yagmur Ilba</h1>
+      <p class="tagline">I study how news media frame the world, <span>using large language models and participatory AI.</span></p>
+      <div class="meta">
+        <span class="mono">Martigny &amp; Lausanne, CH</span>
+        <span class="mono dot">Open to collaboration</span>
+      </div>
+      <div class="profiles">
+        <a href="https://scholar.google.com/citations?user=Y8kSxqMAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://orcid.org/0009-0001-6901-7105">ORCID</a>
+        <a href="https://github.com/nilyagmurilba">GitHub</a>
+        <a href="https://www.linkedin.com/in/nilyagmur">LinkedIn</a>
+        <a href="https://people.epfl.ch/nil.ilba?lang=en">EPFL</a>
+      </div>
+    </div>
+    <img src="portrait.jpg" alt="Portrait of Nil Yagmur Ilba">
+  </div>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <h2>Research</h2>
+    <div>
+      <p class="statement">I am a doctoral student in the <a class="link" href="https://www.idiap.ch/en/research/groups/social-computing">Social Computing Group</a> at Idiap Research Institute and EPFL, supervised by <a class="link" href="https://www.idiap.ch/~gatica/">Prof. Daniel Gatica-Perez</a>. My PhD focuses on <strong>news media framing analysis</strong>: how stories are told, by whom and with what effect, using LLMs together with participatory AI methods.</p>
+      <p class="statement muted">Before that, I completed an MSc in Digital Humanities at EPFL, working on language models, knowledge graphs and cultural heritage.</p>
+      <div class="rows two" style="margin-top:32px">
+        <div class="row"><span class="mono">Group</span><a class="link" href="https://www.idiap.ch/en/research/groups/social-computing">Social Computing, Idiap Research Institute</a></div>
+        <div class="row"><span class="mono">Institution</span><a class="link" href="https://people.epfl.ch/nil.ilba?lang=en">EPFL, École Polytechnique Fédérale de Lausanne</a></div>
+        <div class="row"><span class="mono">Supervisor</span><a class="link" href="https://www.idiap.ch/~gatica/">Prof. Daniel Gatica-Perez</a></div>
+        <div class="row"><span class="mono">Topics</span><span>Media framing · LLMs · Participatory AI · Computational social science</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <h2>News</h2>
+    <div class="rows news">
+      <div class="row"><span class="mono">Jul 2026</span><span>Presented our paper <a class="link" href="https://infoscience.epfl.ch/handle/20.500.14299/267531">“Living in a Material(istic) World”</a> at the ADHO Digital Humanities Conference (DH2026) in Daejeon, South Korea, and received the <strong>Conference Bursary Award</strong> for young researchers.</span></div>
+      <div class="row"><span class="mono">2026</span><span>Started my PhD in the <a class="link" href="https://www.idiap.ch/en/research/groups/social-computing">Social Computing Group</a> at Idiap Research Institute and EPFL, supervised by Prof. Daniel Gatica-Perez.</span></div>
+      <div class="row"><span class="mono">2026</span><span>Completed my MSc in Digital Humanities at EPFL.</span></div>
+      <div class="row"><span class="mono">Nov 2024</span><span>Paper on ecological metaphors in open-science discourse published in the <em>Anthology of Computers and the Humanities</em>.</span></div>    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <div>
+      <div class="rows three">
+        <a class="row" href="https://infoscience.epfl.ch/handle/20.500.14299/267531" target="_blank" rel="noopener">
+          <span class="mono">2026</span>
+          <div><div class="t">Living in a Material(istic) World: Understanding the Mutual Effect between Popular Music and Materialistic Practices</div><div class="sub">Digital Humanities 2026 (ADHO), Daejeon, South Korea · with A. Balasubramaniam &amp; D. Belfiore</div><div class="award">Conference Bursary Award</div></div>
+          <span class="mono r">First author ↗</span>
+        </a>
+        <div class="row">
+          <span class="mono">2024</span>
+          <div><div class="t">Tracing Ecological Metaphors in Discourses on Open Science using LLMs and Knowledge Graphs</div><div class="sub">Anthology of Computers and the Humanities</div></div>
+          <span class="mono r">Author</span>
+        </div>
+        <div class="row">
+          <span class="mono">2024</span>
+          <div><div class="t">Painter Profile Clustering Using NLP Features</div><div class="sub">Complexity, Future Information Systems and Risk, Angers</div></div>
+          <span class="mono r">Co-author</span>
+        </div>
+      </div>
+      <a class="link more" href="https://scholar.google.com/citations?user=Y8kSxqMAAAAJ&amp;hl=en">All publications on Google Scholar →</a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects<span class="mono">Earlier work</span></h2>
+    <div>
+      <div class="legend" id="legend"></div>
+      <div class="rows projects" id="project-list"></div>
+    </div>
+  </section>
+  <img class="peek" id="peek" alt="" aria-hidden="true">
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="rows three">
+      <div class="row"><span class="mono">2026–</span><div><div class="t">Doctoral Student</div><div class="sub">Social Computing Group, Idiap Research Institute &amp; EPFL</div></div><span class="mono r">Martigny</span></div>
+      <div class="row"><span class="mono">2024–25</span><div><div class="t">Student Research Assistant</div><div class="sub">Laboratory for the History of Science and Technology, EPFL</div></div><span class="mono r">Lausanne</span></div>
+      <div class="row"><span class="mono">2024</span><div><div class="t">Student Assistant</div><div class="sub">Laboratory for Experimental Museology, EPFL</div></div><span class="mono r">Lausanne</span></div>
+      <div class="row"><span class="mono">2022–23</span><div><div class="t">Research Assistant</div><div class="sub">Data Science &amp; Optimization Group, Istanbul Bilgi University</div></div><span class="mono r">Istanbul</span></div>
+      <div class="row"><span class="mono">2022–23</span><div><div class="t">Project Coordinator, 2209-A</div><div class="sub">TÜBİTAK</div></div><span class="mono r">Istanbul</span></div>
+      <div class="row"><span class="mono">2021</span><div><div class="t">Undergraduate Research Assistant</div><div class="sub">Cultural Policy and Management Research Centre, Istanbul Bilgi University</div></div><span class="mono r">Istanbul</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="rows two">
+      <div class="row"><span class="mono">Scholar</span><a class="link" href="https://scholar.google.com/citations?user=Y8kSxqMAAAAJ&amp;hl=en">Google Scholar</a></div>
+      <div class="row"><span class="mono">ORCID</span><a class="link" href="https://orcid.org/0009-0001-6901-7105">0009-0001-6901-7105</a></div>
+      <div class="row"><span class="mono">GitHub</span><a class="link" href="https://github.com/nilyagmurilba">github.com/nilyagmurilba</a></div>
+      <div class="row"><span class="mono">LinkedIn</span><a class="link" href="https://www.linkedin.com/in/nilyagmur">linkedin.com/in/nilyagmur</a></div>    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap mono"><span>© 2026 Nil Yagmur Ilba</span><span>Martigny &amp; Lausanne</span></div>
+</footer>
+
+<script>
+  // Edit projects here: [title, method, category, link ("" = no link), image]
+  const CATS = {
+    ai:   { name: "AI & Language",         color: "var(--c-ai)" },
+    heri: { name: "Cultural Heritage",     color: "var(--c-heri)" },
+    data: { name: "Data & Visualization",  color: "var(--c-data)" },
+    media:{ name: "Media & Society",       color: "var(--c-media)" },
+    perf: { name: "Design & Performance",  color: "var(--c-perf)" },
+  };
+  const U = "https://images.unsplash.com/";
+  const P = "https://plus.unsplash.com/";
+  const PROJECTS = [
+    ["The ‘Ecosystem’ of Open Science", "LLMs, knowledge graphs, networks", "ai", "https://lab.hypotheses.org/the-ecosystem-of-open-science", "https://nilyagmurilba.github.io/Ecosytem-of-Open-Science/assets/multilayer_network.png"],
+    ["Triadic Triptych, Zurich Design Museum", "Motion data, generative AI", "perf", "https://museum-gestaltung.ch/en/digital-guide-museum-future", "https://www.epfl.ch/labs/emplus/wp-content/uploads/2025/08/triadic-triptych.jpg"],
+    ["How Are European Citizens’ Views Changing?", "D3.js, survey data", "data", "https://com-480-data-visualization.github.io/ChartToppers/", "https://davideromano.me/dataviz-2.png"],
+    ["Universal Exhibition Chatbot", "Vision-language models", "heri", "https://drive.google.com/file/d/1W_quODp-feAIuZvnsAHZgvR2bGF9d9EH/view?usp=sharing", P + "premium_photo-1739400184347-3df0d11f591d?auto=format&fit=crop&q=70&w=800"],
+    ["Stereo Image Restoration for VR", "Image processing", "heri", "", ""],
+    ["RAG-based Educational Assistant", "Retrieval-augmented generation", "ai", "https://doi.org/10.13140/RG.2.2.24579.77609", "https://nkk.com.vn/wp-content/uploads/2025/08/nkktech-global-image-post-top-cong-cu-xay-dung-chatbot-ai-khong-can-lap-trinh.jpg.webp"],
+    ["Spatialising Barclay Johnson’s Travelogue", "NER, GIS", "heri", "", U + "photo-1524661135-423995f22d0b?auto=format&fit=crop&q=70&w=800"],
+    ["Exploring Multicultural Bridges on TikTok", "Topic modeling, hashtag networks", "media", "https://doi.org/10.13140/RG.2.2.17868.88965", U + "photo-1596344848145-c435aa808182?auto=format&fit=crop&q=70&w=800"],
+    ["Living in a Material(istic) World", "Text analysis, digital archives", "media", "https://infoscience.epfl.ch/handle/20.500.14299/267531", U + "photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=70&w=800"],
+    ["Europeana Cultural Heritage", "Metadata, digital storytelling", "heri", "", P + "premium_photo-1661924626279-34b81b1da5a3?auto=format&fit=crop&q=70&w=800"],
+    ["Synchronizing Rhythm and Narrative", "Choreomusicology", "perf", "https://doi.org/10.13140/RG.2.2.31290.66243", "https://amballet.org/wp-content/uploads/2016/09/sl702.png"],
+    ["Algal Bloom Detection", "Remote sensing, machine learning", "data", "https://doi.org/10.13140/RG.2.2.27935.21926", P + "premium_photo-1664801768789-41b5fd8c69e9?auto=format&fit=crop&q=70&w=800"],
+    ["The Beer Mood Matcher", "NLP, recommender systems", "ai", "https://sites.google.com/view/beermatcher/", P + "premium_photo-1692872797247-afe20967d1da?auto=format&fit=crop&q=70&w=800"],
+    ["Lume: Energy-saving App", "UX design, gamification", "perf", "https://www.figma.com/design/6jStjimrTeyW0sIJAMqg3E/2324_G7_Design?node-id=492-3876&p=f", U + "photo-1737882171913-f4ced0ce73d8?auto=format&fit=crop&q=70&w=800"],
+  ];
+
+  const list = document.getElementById("project-list");
+  const legend = document.getElementById("legend");
+  const peek = document.getElementById("peek");
+  let active = null;
+
+  function render() {
+    list.innerHTML = PROJECTS.filter(p => !active || p[2] === active).map(([t, m, c, href, img]) => {
+      const tag = href ? "a" : "div";
+      const attrs = href ? ` href="${href}" target="_blank" rel="noopener"` : "";
+      const thumb = img ? `<img src="${img}" alt="" loading="lazy">` : `<span class="ph"></span>`;
+      return `<${tag} class="row" style="--c:${CATS[c].color}"${attrs} data-img="${img}">
+        <span class="thumb">${thumb}</span>
+        <span><span class="t">${t}</span><span class="m">${m}</span></span>
+        <span class="cat hide-sm">${CATS[c].name}</span>
+        <span class="arrow">${href ? "↗" : ""}</span>
+      </${tag}>`;
+    }).join("");
+    legend.innerHTML = Object.entries(CATS).map(([k, v]) =>
+      `<button class="chip${active === k ? " on" : ""}" style="--c:${v.color}" data-k="${k}">${v.name}</button>`).join("");
+  }
+  legend.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    active = active === b.dataset.k ? null : b.dataset.k; render();
+  });
+  render();
+
+  // Floating image preview on hover (mouse only)
+  if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    list.addEventListener("mousemove", e => {
+      const row = e.target.closest(".row");
+      if (!row || !row.dataset.img) { peek.classList.remove("show"); return; }
+      if (peek.dataset.src !== row.dataset.img) { peek.src = row.dataset.img; peek.dataset.src = row.dataset.img; }
+      peek.style.transform = `translate(${e.clientX + 24}px, ${e.clientY - 90}px)`;
+      peek.classList.add("show");
+    });
+    const hide = () => peek.classList.remove("show");
+    list.addEventListener("mouseleave", hide);
+    legend.addEventListener("click", hide);
+    addEventListener("scroll", hide, { passive: true });
+  }
+</script>
+</body>
+</html>
